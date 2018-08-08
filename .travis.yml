@@ -1,0 +1,8 @@
+---
+sudo: required
+notifications:
+    email: false
+services:
+    - docker
+script:
+    - make $(git diff origin/master --name-only '*/Dockerfile' | xargs dirname)

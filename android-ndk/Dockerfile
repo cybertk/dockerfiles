@@ -13,10 +13,12 @@ RUN apt-get update -y && \
         && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Download and build Caffe
+# Download NDK
+# See https://developer.android.com/ndk/downloads/older_releases
 RUN wget --no-check-certificate https://dl.google.com/android/repository/android-ndk-$revision-linux-x86_64.zip && \
     unzip android-ndk-*.zip -d /opt && \
     rm android-ndk-*.zip
 ENV PATH=/opt/android-ndk-$revision:$PATH
+ENV NDK_ROOT=/opt/android-ndk-$revision
 
 WORKDIR /wd

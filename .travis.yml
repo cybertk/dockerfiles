@@ -1,5 +1,7 @@
 ---
 sudo: required
+git:
+    depth: false
 notifications:
     email: false
 services:

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "==> Building $DOCKER_REPO:$CACHE_TAG on branch $SOURCE_BRANCH at $SOURCE_COMMIT"
+docker build --build-arg revision=$CACHE_TAG -f $DOCKERFILE_PATH -t $IMAGE_NAME .

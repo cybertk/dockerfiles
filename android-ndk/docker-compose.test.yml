@@ -1,0 +1,6 @@
+sut:
+    environment:
+        - CACHE_TAG
+        - IMAGE_NAME
+    build: .
+    command: tests.sh
